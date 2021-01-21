@@ -23,7 +23,12 @@ class MainActivity : AppCompatActivity() {
         val factory = (this.applicationContext as MyApplication).viewModelFactory
         viewModel = ViewModelProviders.of(this, factory).get(NewsViewModel::class.java)
         mBinding.rcvDummy
-        mBinding.rcvDummy.addItemDecoration(DividerItemDecoration(this,LinearLayoutManager.VERTICAL))
+        mBinding.rcvDummy.addItemDecoration(
+            DividerItemDecoration(
+                this,
+                LinearLayoutManager.VERTICAL
+            )
+        )
         adapter = NewsAdapter()
         mBinding.rcvDummy.adapter = adapter
         getNewsDetails()

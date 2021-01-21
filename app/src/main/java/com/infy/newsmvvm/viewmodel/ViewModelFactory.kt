@@ -6,10 +6,10 @@ import androidx.lifecycle.ViewModelProvider
 import com.infy.newsmvvm.repository.Repository
 
 @Suppress("UNCHECKED_CAST")
-class ViewModelFactory() :ViewModelProvider.NewInstanceFactory(){
-private lateinit var context: Context
+class ViewModelFactory() : ViewModelProvider.NewInstanceFactory() {
+    private lateinit var context: Context
 
-    constructor(context: Context) : this(){
+    constructor(context: Context) : this() {
         this.context = context
     }
 
