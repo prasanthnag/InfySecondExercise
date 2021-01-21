@@ -8,7 +8,7 @@ import com.infy.newsmvvm.R
 import com.infy.newsmvvm.databinding.ItemNewsBinding
 import com.infy.newsmvvm.model.NewsDetails
 
-class NewsAdapter() : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
+class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
     private var newsDetails: ArrayList<NewsDetails> = arrayListOf()
 

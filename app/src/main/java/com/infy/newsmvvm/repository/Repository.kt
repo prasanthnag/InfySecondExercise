@@ -22,7 +22,7 @@ class Repository(private val context: Context) {
     }
 
     private fun getJSONItems(): ArrayList<NewsDetails> {
-        val newsDetailsList : ArrayList<NewsDetails> = arrayListOf()
+        val newsDetailsList: ArrayList<NewsDetails> = arrayListOf()
         try {
             val jsonObject = JSONObject(readJSON())
             var newsDetails: NewsDetails

@@ -1,7 +1,6 @@
 package com.infy.newsmvvm.viewmodel
 
 import android.content.Context
-import android.content.res.Resources
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.infy.newsmvvm.repository.Repository

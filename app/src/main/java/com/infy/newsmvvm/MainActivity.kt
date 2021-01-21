@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.infy.newsmvvm.adapter.NewsAdapter
 import com.infy.newsmvvm.application.MyApplication
 import com.infy.newsmvvm.databinding.ActivityMainBinding
@@ -21,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         val factory = (this.applicationContext as MyApplication).viewModelFactory
         viewModel = ViewModelProviders.of(this, factory).get(NewsViewModel::class.java)
         mBinding.rcvDummy
+        mBinding.rcvDummy.addItemDecoration(DividerItemDecoration(this,LinearLayoutManager.VERTICAL))
         adapter = NewsAdapter()
         mBinding.rcvDummy.adapter = adapter
         getNewsDetails()
