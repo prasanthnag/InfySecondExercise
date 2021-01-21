@@ -1,7 +1,6 @@
 package com.infy.newsmvvm.repository
 
 import android.content.Context
-import androidx.lifecycle.MutableLiveData
 import com.infy.newsmvvm.R
 import com.infy.newsmvvm.model.NewsDetails
 import org.json.JSONException
@@ -12,16 +11,16 @@ import java.nio.charset.Charset
 
 class Repository(private val context: Context) {
     private var mNewsDetails: ArrayList<NewsDetails> = arrayListOf()
-    private var mutableLiveData: MutableLiveData<ArrayList<NewsDetails>> = MutableLiveData()
+    //private var mutableLiveData: MutableLiveData<ArrayList<NewsDetails>> = MutableLiveData()
 
-    fun getNewsData(): MutableLiveData<ArrayList<NewsDetails>> {
-        mNewsDetails = getJSONItems()
-        mutableLiveData.value = mNewsDetails
+    /* fun getNewsData(): MutableLiveData<ArrayList<NewsDetails>> {
+         mNewsDetails = getJSONItems()
+         mutableLiveData.value = mNewsDetails
 
-        return mutableLiveData
-    }
+         return mutableLiveData
+     }*/
 
-    private fun getJSONItems(): ArrayList<NewsDetails> {
+    fun getJSONItems(): ArrayList<NewsDetails> {
         val newsDetailsList: ArrayList<NewsDetails> = arrayListOf()
         try {
             val jsonObject = JSONObject(readJSON())
