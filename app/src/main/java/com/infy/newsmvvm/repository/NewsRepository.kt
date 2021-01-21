@@ -9,16 +9,7 @@ import java.io.IOException
 import java.io.InputStream
 import java.nio.charset.Charset
 
-class Repository(private val context: Context) {
-    private var mNewsDetails: ArrayList<NewsDetails> = arrayListOf()
-    //private var mutableLiveData: MutableLiveData<ArrayList<NewsDetails>> = MutableLiveData()
-
-    /* fun getNewsData(): MutableLiveData<ArrayList<NewsDetails>> {
-         mNewsDetails = getJSONItems()
-         mutableLiveData.value = mNewsDetails
-
-         return mutableLiveData
-     }*/
+class NewsRepository(private val context: Context) {
 
     fun getJSONItems(): ArrayList<NewsDetails> {
         val newsDetailsList: ArrayList<NewsDetails> = arrayListOf()

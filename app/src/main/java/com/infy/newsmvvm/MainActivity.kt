@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         val factory = (this.applicationContext as MyApplication).viewModelFactory
         viewModel = ViewModelProviders.of(this, factory).get(NewsViewModel::class.java)
-        mBinding.rcvDummy
         mBinding.rcvDummy.addItemDecoration(
             DividerItemDecoration(
                 this,
@@ -31,11 +30,13 @@ class MainActivity : AppCompatActivity() {
         )
         adapter = NewsAdapter()
         mBinding.rcvDummy.adapter = adapter
-        getNewsDetails()
+        subscribeToNewsDetails()
     }
 
-    private fun getNewsDetails() {
-        viewModel.getAllNewsDetails()
-            .observe(this, Observer { t -> adapter.add(t as ArrayList<NewsDetails>) })
+    private fun subscribeToNewsDetails() {
+        viewModel.newsDetailsLiveData.observe(this,
+            Observer {
+                adapter.add(it as ArrayList<NewsDetails>)
+            })
     }
 }

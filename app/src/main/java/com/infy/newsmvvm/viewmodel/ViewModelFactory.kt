@@ -3,7 +3,7 @@ package com.infy.newsmvvm.viewmodel
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.infy.newsmvvm.repository.Repository
+import com.infy.newsmvvm.repository.NewsRepository
 
 @Suppress("UNCHECKED_CAST")
 class ViewModelFactory() : ViewModelProvider.NewInstanceFactory() {
@@ -15,7 +15,7 @@ class ViewModelFactory() : ViewModelProvider.NewInstanceFactory() {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(NewsViewModel::class.java))
-            return NewsViewModel(Repository(context)) as T
+            return NewsViewModel(NewsRepository(context)) as T
         return super.create(modelClass)
     }
 }
