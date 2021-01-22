@@ -3,6 +3,7 @@ package com.infy.newsmvvm.repository
 import android.content.Context
 import com.infy.newsmvvm.R
 import com.infy.newsmvvm.model.NewsDetails
+import com.infy.newsmvvm.util.Constants
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.IOException
@@ -19,11 +20,11 @@ class NewsRepository(private val context: Context) {
             val jsonArray = jsonObject.getJSONArray("rows")
             for (i in 0 until jsonArray.length()) {
                 val itemObj = jsonArray.getJSONObject(i)
-                val title = if (!itemObj.isNull("title")) itemObj.getString("title") else null
+                val title = if (!itemObj.isNull(Constants.KEY_TITLE)) itemObj.getString(Constants.KEY_TITLE) else null
                 val description =
-                    if (!itemObj.isNull("description")) itemObj.getString("description") else null
+                    if (!itemObj.isNull(Constants.KEY_DESCRIPTION)) itemObj.getString(Constants.KEY_DESCRIPTION) else null
                 val imageRef =
-                    if (!itemObj.isNull("imageHref")) itemObj.getString("imageHref") else null
+                    if (!itemObj.isNull(Constants.KEY_IMAGE_URL)) itemObj.getString(Constants.KEY_IMAGE_URL) else null
                 if (title != null || description != null || imageRef != null) {
                     newsDetails = NewsDetails(title, description, imageRef)
                     newsDetailsList.add(newsDetails)

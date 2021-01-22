@@ -8,6 +8,7 @@ object AdapterUtil {
     @BindingAdapter("Image")
     @JvmStatic
     fun loadImage(imageView: ImageView, url: String) {
-        Glide.with(imageView).load(url).into(imageView)
+        Glide.with(imageView).load(url)
+            .error(android.R.drawable.ic_menu_gallery).into(imageView)
     }
 }

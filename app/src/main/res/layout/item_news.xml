@@ -41,7 +41,7 @@
                 android:paddingRight="@dimen/dimen_8dp"
                 android:paddingLeft="0dp"
                 android:textSize="@dimen/dimen_16sp"
-                android:text="@{news.description}"
+                android:text='@{news.description != null ? news.description :"No description available"}'
                 app:layout_constraintEnd_toStartOf="@+id/imgCountry"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtTitle"/>
